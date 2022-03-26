@@ -8,13 +8,28 @@
         grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
         grid-template-columns:[full-start] minmax(6rem, 1fr) [center-start] repeat(8,[col-start] minmax(min-content, 14rem)[col-end]) [center-end] minmax(6rem, 1fr) [full-end];
     }
+    
+    @media only screen and (max-width: $bp-medium){
+        grid-template-rows: 6rem calc(100vh-6rem);
+    }
 }
 
 
 .header{
     grid-column: full-start / col-end 6;
+
+    @media only screen and (max-width:$bp-medium){
+        grid-column: full-start / -1;
+    }
+    @media only screen and (max-width:$bp-small){
+        padding: 5rem;
+    }
 }
 
 .realtors{
     grid-column: col-start 7 / full-end;
+
+    @media only screen and (max-width:$bp-medium){
+        grid-column: full-start / -1;
+    }
 }
